@@ -1,13 +1,13 @@
 import React from 'react';
-import { Twitter, Youtube, Instagram, Facebook, Github, Mail, MapPin, Phone } from 'lucide-react';
+import { Twitter, Youtube, Instagram, Facebook, Github, Mail, MapPin, Phone, Globe } from 'lucide-react';
 
 const Footer = () => {
   const socialLinks = [
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Youtube, href: "#", label: "YouTube" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Github, href: "#", label: "GitHub" }
+    { icon: Globe, href: "https://www.techniqueedu.com/", label: "Website" },
+    { icon: Youtube, href: "https://www.youtube.com/@techniquepolytechnicinstitute", label: "YouTube" },
+    { icon: Instagram, href: "https://www.instagram.com/tpihooghly/", label: "Instagram" },
+    { icon: Facebook, href: "https://www.facebook.com/tpicollege", label: "Facebook" },
+    
   ];
 
   const contactInfo = [
@@ -100,7 +100,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div>
+            {/* <div>
               <h3 className="text-orange-500 font-semibold text-xl mb-6 inline-block border-b-2 border-orange-500">
                 Features
               </h3>
@@ -113,7 +113,7 @@ const Footer = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
           </div>
 
           {/* Social Links */}

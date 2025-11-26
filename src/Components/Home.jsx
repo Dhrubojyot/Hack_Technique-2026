@@ -8,6 +8,18 @@ const Home = () => {
     seconds: '00'
   });
 
+  // Load Devfolio script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://apply.devfolio.co/v2/sdk.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    }
+  }, []);
+
   useEffect(() => {
     const targetDate = new Date('2026-01-06').getTime();
 
@@ -67,9 +79,15 @@ const Home = () => {
                 </h2>
               </div>
 
-              <button className="mt-6 bg-orange-500 hover:bg-orange-600 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-md text-base sm:text-lg font-medium transition-colors">
-                Register Now
-              </button>
+              {/* Devfolio Apply Button */}
+              <div className="flex justify-center">
+                <div 
+                  className="apply-button" 
+                  data-hackathon-slug="hack-technique2026" 
+                  data-button-theme="light"
+                  style={{ height: '44px', width: '312px' }}
+                ></div>
+              </div>
             </div>
 
             {/* Countdown Timer */}
