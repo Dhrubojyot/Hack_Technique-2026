@@ -39,9 +39,9 @@ const SponsorsPage = () => {
     ],
     domain: [
       {
-        name: "XYZ",
+        name: "XYZ Domain",
         logo: "/xyz.png", // Update with actual path
-        url: "", // Add actual URL
+        url: "https://gen.xyz/", // Add actual URL
         alt: "xyz domain LOGO"
       }
     ]
@@ -72,9 +72,7 @@ const SponsorsPage = () => {
                     <img
                       src={sponsor.logo}
                       alt={`${sponsor.name} logo`}
-                      className={`w-full h-full object-contain ${
-                        sponsor.name === "XYZ" ? "rounded-xl" : ""
-                      }`}
+                      className="w-full h-full object-contain"
                     />
                   </div>
                   <div className="text-white/80 text-xl font-semibold">
@@ -112,9 +110,7 @@ const SponsorsPage = () => {
                     <img
                       src={partner.logo}
                       alt={`${partner.name} logo`}
-                      className={`w-full h-full object-contain ${
-                        partner.name === "XYZ" ? "rounded-xl" : ""
-                      }`}
+                      className="w-full h-full object-contain"
                     />
                   </div>
                   <div className="text-white/80 text-xl font-semibold">
@@ -192,3 +188,5 @@ const SponsorsPage = () => {
 };
 
 export default SponsorsPage;
+
+

@@ -9,6 +9,8 @@ import Crew from './Components/Crew'
 import FAQ from './Components/FAQ'
 import Footer from './Components/Footer'
 import SponsorsPage from './Components/Sponser'
+import PrizeSection from './Components/Prizes'
+
 
 function App() {
 
@@ -17,6 +19,9 @@ function App() {
       <Navbar/>
       <section id="home">
         <Home/>
+      </section>
+      <section id="prizes">
+        <PrizeSection/>
       </section>
       <section id="about">
         <AboutPage/>

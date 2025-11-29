@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CustomDevfolioButton from './CustomDevfolioButton'; // Adjust path as needed
+import CountdownTimer from './CountdownTimer';
 
 const Home = () => {
   const [time, setTime] = useState({
@@ -87,29 +88,8 @@ const Home = () => {
             </div>
 
             {/* Countdown Timer */}
-            <div className="relative max-w-xs sm:max-w-xl lg:max-w-2xl mx-auto px-4">
-              <div className="bg-black bg-opacity-80 backdrop-blur-lg rounded-full p-4 sm:p-6 lg:p-8 border border-purple-500/30 shadow-2xl">
-                <div className="grid grid-cols-4 gap-1 sm:gap-2 text-center text-white">
-                  <div>
-                    <div className="text-2xl sm:text-3xl lg:text-4xl font-medium">{time.days}</div>
-                    <div className="text-xs sm:text-sm mt-1">DAYS</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl sm:text-3xl lg:text-4xl font-medium">{time.hours}</div>
-                    <div className="text-xs sm:text-sm mt-1">HOURS</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl sm:text-3xl lg:text-4xl font-medium">{time.minutes}</div>
-                    <div className="text-xs sm:text-sm mt-1">MINUTES</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl sm:text-3xl lg:text-4xl font-medium">{time.seconds}</div>
-                    <div className="text-xs sm:text-sm mt-1">SECONDS</div>
-                  </div>
-                </div>
-              </div>
-              {/* Glow Effect */}
-              <div className="absolute inset-0 bg-purple-500/20 blur-3xl rounded-full -z-10"></div>
+            <div>
+              <CountdownTimer/>
             </div>
           </div>
         </div>
