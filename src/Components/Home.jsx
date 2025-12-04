@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CustomDevfolioButton from './CustomDevfolioButton'; // Adjust path as needed
 import CountdownTimer from './CountdownTimer';
+import CustomWhatsappButton from './CustomWhatsappButton';
 
 const Home = () => {
   const [time, setTime] = useState({
@@ -64,7 +65,7 @@ const Home = () => {
             {/* Header Section */}
             <div className="text-white space-y-4 sm:space-y-6">
               <div>
-                <h3 className="text-lg sm:text-xl lg:text-3xl uppercase tracking-wider mb-1 mt-8 sm:mt-12 lg:mt-20">
+                <h3 className="text-base sm:text-xl lg:text-3xl uppercase tracking-wider mb-1 mt-8 sm:mt-12 lg:mt-20">
                   TECHNIQUE POLYTECHNIC INSTITUTE
                 </h3>
                 <p className="text-gray-300 text-base sm:text-lg lg:text-2xl uppercase tracking-wider">
@@ -76,14 +77,15 @@ const Home = () => {
                 <h1 className="text-6xl sm:text-7xl lg:text-9xl font-bold leading-tight">
                   Hack Technique
                 </h1>
-                <h2 className="text-4xl sm:text-4xl lg:text-6xl font-bold">
+                <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold">
                   6th January 2026
                 </h2>
               </div>
 
               {/* Custom Devfolio Apply Button */}
-              <div className="flex justify-center">
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
                 <CustomDevfolioButton />
+                <CustomWhatsappButton />
               </div>
             </div>
 

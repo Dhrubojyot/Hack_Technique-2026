@@ -5,7 +5,7 @@ const SponsorsPage = () => {
     gold: [
       {
         name: "DEVFOLIO",
-        logo: "/_Colored.png", // Update with actual path
+        logo: "/_Colored.png",
         url: "https://devfolio.co",
         alt: "DEVFOLIO LOGO"
       }
@@ -13,9 +13,17 @@ const SponsorsPage = () => {
     silver: [
       {
         name: "ETHINDIA",
-        logo: "/Untitled.png", // Update with actual path
+        logo: "/Untitled.png",
         url: "https://ethindia.co ",
         alt: "ETHINDIA LOGO"
+      }
+    ],
+    hiring: [
+      {
+        name: "Latrics India Private Limited",
+        logo: "/latrics.png",
+        url: "https://latrics.com/",
+        alt: "Latrics LOGO"
       }
     ],
     inkind: [
@@ -35,7 +43,7 @@ const SponsorsPage = () => {
     partners: [
       {
         name: "",
-        logo: "/innovatex.png", // Update with actual path
+        logo: "/innovatex.png",
         url: "https://innovatexcommunity.netlify.app/ ",
         alt: "InnovateX Community LOGO"
       }
@@ -43,16 +51,16 @@ const SponsorsPage = () => {
     drink: [
       {
         name: "",
-        logo: "/red bull1.png", // Update with actual path
-        url: "https://www.redbull.com/in-en", // Add actual URL
+        logo: "/red bull1.png",
+        url: "https://www.redbull.com/in-en",
         alt: "Drink Partner LOGO"
       }
     ],
     domain: [
       {
         name: "XYZ Domain",
-        logo: "/xyz.png", // Update with actual path
-        url: "https://gen.xyz/", // Add actual URL
+        logo: "/xyz.png",
+        url: "https://gen.xyz/",
         alt: "xyz domain LOGO"
       }
     ]
@@ -69,14 +77,14 @@ const SponsorsPage = () => {
           {title}
         </h2>
         <div className="flex justify-center items-center">
-          <div className="grid grid-cols-1 gap-8 justify-items-center">
+          <div className="flex flex-wrap justify-center gap-8 w-full">
             {sponsors.map((sponsor, index) => (
               <a
                 key={index}
                 href={sponsor.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`rounded-xl p-8 ${glassStyle} w-full max-w-md flex items-center justify-center`}
+                className={`rounded-xl p-8 ${glassStyle} w-full sm:w-auto min-w-[300px] max-w-sm flex items-center justify-center`}
               >
                 <div className="text-center">
                   <div className="relative w-64 h-32 mx-auto mb-6">
@@ -86,9 +94,11 @@ const SponsorsPage = () => {
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  <div className="text-white/80 text-xl font-semibold">
-                    {sponsor.name}
-                  </div>
+                  {sponsor.name && (
+                    <div className="text-white/80 text-xl font-semibold">
+                      {sponsor.name}
+                    </div>
+                  )}
                 </div>
               </a>
             ))}
@@ -107,14 +117,14 @@ const SponsorsPage = () => {
           {title}
         </h2>
         <div className="flex justify-center items-center">
-          <div className="grid grid-cols-1 gap-8 justify-items-center">
+          <div className="flex flex-wrap justify-center gap-8 w-full">
             {partners.map((partner, index) => (
               <a
                 key={index}
                 href={partner.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`rounded-xl p-8 ${glassStyle} w-full max-w-md flex items-center justify-center`}
+                className={`rounded-xl p-8 ${glassStyle} w-full sm:w-auto min-w-[300px] max-w-sm flex items-center justify-center`}
               >
                 <div className="text-center">
                   <div className="relative w-64 h-32 mx-auto mb-6">
@@ -124,9 +134,11 @@ const SponsorsPage = () => {
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  <div className="text-white/80 text-xl font-semibold">
-                    {partner.name}
-                  </div>
+                  {partner.name && (
+                    <div className="text-white/80 text-xl font-semibold">
+                      {partner.name}
+                    </div>
+                  )}
                 </div>
               </a>
             ))}
@@ -167,6 +179,13 @@ const SponsorsPage = () => {
           titleColor="bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent"
         />
 
+        {/* Hiring Sponsors */}
+        <SponsorSection
+          title="Our Hiring Partner"
+          sponsors={sponsors.hiring}
+          titleColor="bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent"
+        />
+
         {/* Inkind Sponsors */}
         <SponsorSection
           title="Our Inkind Sponsor"
@@ -187,6 +206,7 @@ const SponsorsPage = () => {
           partners={sponsors.partners}
           titleColor="text-white"
         />
+
         {/* Domain Partners */}
         <PartnerSection
           title="Domain Partner"
@@ -199,5 +219,3 @@ const SponsorsPage = () => {
 };
 
 export default SponsorsPage;
-
-
