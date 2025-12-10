@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Info, MapPin, HelpCircle, UserPlus, Home, CalendarClock } from 'lucide-react';
+import { Menu, X, Info, MapPin, HelpCircle, UserPlus, Home, CalendarClock, Users } from 'lucide-react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,11 +51,13 @@ const Navbar = () => {
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
               <div className="flex items-center gap-2 sm:gap-4">
-                <img 
-                  src="/hacktech.png"
-                  alt="Hackathon Logo"
-                  className="h-11 sm:h-14 lg:h-14 w-auto"
-                />
+                <Link to="/"> {/* Make logo link to home */}
+                  <img 
+                    src="/hacktech.png"
+                    alt="Hackathon Logo"
+                    className="h-11 sm:h-14 lg:h-14 w-auto hover:opacity-90 transition-opacity cursor-pointer"
+                  />
+                </Link>
               </div>
             </div>
 
@@ -82,6 +85,13 @@ const Navbar = () => {
                 Venue
               </button>
               <button 
+                onClick={() => scrollToSection('timeline')}
+                className="text-white/80 hover:text-orange-500 text-base lg:text-lg font-medium transition-colors hover:scale-105 transform duration-300 flex items-center gap-2"
+              >
+                <CalendarClock className="w-5 h-5" />
+                Timeline
+              </button>
+              <button 
                 onClick={() => scrollToSection('faq')}
                 className="text-white/80 hover:text-orange-500 text-base lg:text-lg font-medium transition-colors hover:scale-105 transform duration-300 flex items-center gap-2"
               >
@@ -89,20 +99,14 @@ const Navbar = () => {
                 FAQ
               </button>
 
-              <button 
-                  onClick={() => scrollToSection('timeline')}
-                  className="text-white/80 hover:text-orange-500 text-base lg:text-lg font-medium transition-colors hover:scale-105 transform duration-300 flex items-center gap-2"
-                >
-                  <CalendarClock className="w-5 h-5" />
-                  Timeline
-                </button>
-              {/* <button 
-                onClick={() => scrollToSection('register')}
-                className="bg-black/40 text-white px-6 lg:px-8 py-2 lg:py-3 rounded-lg lg:rounded-xl border border-purple-500/30 hover:border-orange-500/50 hover:bg-black/60 transition-all duration-300 text-base lg:text-lg font-medium hover:scale-105 transform flex items-center gap-2"
+              {/* Crew Link - Separate Route */}
+              <Link 
+                to="/crew"
+                className="text-white/80 hover:text-orange-500 text-base lg:text-lg font-medium transition-colors hover:scale-105 transform duration-300 flex items-center gap-2"
               >
-                <UserPlus className="w-5 h-5" />
-                Join Us
-              </button> */}
+                <Users className="w-5 h-5" />
+                Crew
+              </Link>
             </div>
 
             {/* Mobile menu button */}
@@ -142,26 +146,29 @@ const Navbar = () => {
                   Venue
                 </button>
                 <button 
+                  onClick={() => scrollToSection('timeline')}
+                  className="text-white/80 hover:text-orange-500 px-3 sm:px-4 py-1.5 sm:py-2 text-base sm:text-lg font-medium transition-colors rounded-lg hover:bg-black/20 flex items-center gap-2"
+                >
+                  <CalendarClock className="w-5 h-5" />
+                  Timeline
+                </button>
+                <button 
                   onClick={() => scrollToSection('faq')}
                   className="text-white/80 hover:text-orange-500 px-3 sm:px-4 py-1.5 sm:py-2 text-base sm:text-lg font-medium transition-colors rounded-lg hover:bg-black/20 flex items-center gap-2"
                 >
                   <HelpCircle className="w-5 h-5" />
                   FAQ
                 </button>
-                <button 
-                  onClick={() => scrollToSection('timeline')}
+                
+                {/* Crew Link - Mobile - Separate Route */}
+                <Link 
+                  to="/crew"
+                  onClick={() => setIsOpen(false)}
                   className="text-white/80 hover:text-orange-500 px-3 sm:px-4 py-1.5 sm:py-2 text-base sm:text-lg font-medium transition-colors rounded-lg hover:bg-black/20 flex items-center gap-2"
                 >
-                  <HelpCircle className="w-5 h-5" />
-                  Timeline
-                </button>
-                {/* <button 
-                  onClick={() => scrollToSection('register')}
-                  className="bg-black/40 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-lg sm:rounded-xl border border-purple-500/30 hover:border-orange-500/50 hover:bg-black/60 transition-all duration-300 text-base sm:text-lg font-medium flex items-center gap-2"
-                >
-                  <UserPlus className="w-5 h-5" />
-                  Join Us
-                </button> */}
+                  <Users className="w-5 h-5" />
+                  Crew
+                </Link>
               </div>
             </div>
           )}

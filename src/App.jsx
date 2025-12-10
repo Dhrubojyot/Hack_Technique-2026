@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
 import Home from './Components/Home'
 import AboutPage from './Components/About'
@@ -10,10 +11,9 @@ import FAQ from './Components/FAQ'
 import Footer from './Components/Footer'
 import SponsorsPage from './Components/Sponser'
 import PrizeSection from './Components/Prizes'
+import JudgesPage from './Components/Judges';
 
-
-function App() {
-
+function MainLayout() {
   return (
     <>
       <Navbar/>
@@ -35,6 +35,9 @@ function App() {
       <section id="venue">
         <Venue/>
       </section>
+       <section id="judges">
+        <JudgesPage/>
+      </section>
       <section id="sponsors">
         <SponsorsPage/>
       </section>
@@ -43,6 +46,27 @@ function App() {
       </section>
       <Footer/>
     </>
+  )
+}
+
+function CrewPage() {
+  return (
+    <>
+      <Navbar/>
+      <Crew/>
+      <Footer/>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<MainLayout />} />
+        <Route path="/crew" element={<CrewPage />} />
+      </Routes>
+    </Router>
   )
 }
 

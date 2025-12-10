@@ -23,7 +23,7 @@ const CustomDevfolioButton: React.FC<CustomDevfolioButtonProps> = ({
       whileTap={{ scale: 0.98 }}
     >
       <a
-        href=""
+        href="https://hack-technique2026.devfolio.co/"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-block"
@@ -47,8 +47,7 @@ const CustomDevfolioButton: React.FC<CustomDevfolioButtonProps> = ({
 
             {/* Text */}
             <span className="custom-devfolio-button-text">
-              {/* Apply with Devfolio */}
-              Applications open soon
+              Apply with Devfolio
             </span>
           </div>
 

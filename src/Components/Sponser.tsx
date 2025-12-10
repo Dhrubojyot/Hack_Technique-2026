@@ -46,6 +46,18 @@ const SponsorsPage = () => {
         logo: "/innovatex.png",
         url: "https://innovatexcommunity.netlify.app/ ",
         alt: "InnovateX Community LOGO"
+      },
+      {
+        name: "",
+        logo: "/hacktropica.png",
+        url: "",
+        alt: "Hacktropica LOGO"
+      },
+      {
+        name: "",
+        logo: "/aotsccse.png",
+        url: "https://www.sccseaot.in/",
+        alt: "AOT SC CSE LOGO"
       }
     ],
     drink: [

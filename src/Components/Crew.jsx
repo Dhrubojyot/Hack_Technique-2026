@@ -1,43 +1,60 @@
 import React from 'react';
 import { Instagram, Github, Linkedin } from 'lucide-react';
 
-const CrewCard = ({ image, name, role }) => (
-  <div className="relative w-72 group">
-    <div className="relative overflow-hidden rounded-2xl backdrop-blur-lg bg-black/20 border border-white/5 shadow-lg transition-all duration-300 hover:bg-white/5">
-      {/* Image container */}
-      <div className="relative w-full aspect-[3/4]">
+const CrewCard = ({ image, name, role, socials }) => (
+  <div className="relative w-full max-w-xs group">
+    <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-600 to-orange-300 shadow-lg transition-all duration-300 hover:shadow-2xl">
+      {/* Top section with name and role */}
+      <div className="p-4 pb-0">
+        <h3 className="text-white text-2xl font-bold mb-1">
+          {name}
+        </h3>
+        <p className="text-white/90 text-lg font-medium">
+          {role}
+        </p>
+      </div>
+
+      {/* Image container - Maintain crew card aspect ratio */}
+      <div className="relative w-full aspect-[3/4] overflow-hidden">
         <img 
           src={image} 
           alt={name} 
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="w-full h-full object-cover object-top"
         />
-        
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
-        
-        {/* Content overlay */}
-        <div className="absolute bottom-0 left-0 p-6 w-full transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-          <h3 className="text-white text-xl font-bold mb-2">
-            {name}
-            <div className="h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-red-500 to-orange-500 transition-all duration-300" />
-          </h3>
-          <p className="text-white/80 font-medium">
-            {role}
-          </p>
-        </div>
       </div>
 
-      {/* Social icons */}
-      <div className="absolute top-4 right-4 flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
-        <a href="#" className="p-2 rounded-full bg-black/30 backdrop-blur-lg hover:bg-red-500/50 transition-colors">
-          <Instagram className="w-5 h-5 text-white" />
-        </a>
-        <a href="#" className="p-2 rounded-full bg-black/30 backdrop-blur-lg hover:bg-red-500/50 transition-colors">
-          <Github className="w-5 h-5 text-white" />
-        </a>
-        <a href="#" className="p-2 rounded-full bg-black/30 backdrop-blur-lg hover:bg-red-500/50 transition-colors">
-          <Linkedin className="w-5 h-5 text-white" />
-        </a>
+      {/* Bottom social icons bar with individual links */}
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-gray-800 to-gray-700 p-3 flex justify-center gap-6">
+        {socials.instagram && (
+          <a 
+            href={socials.instagram} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="transition-transform hover:scale-110"
+          >
+            <Instagram className="w-5 h-5 text-white" />
+          </a>
+        )}
+        {socials.github && (
+          <a 
+            href={socials.github} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="transition-transform hover:scale-110"
+          >
+            <Github className="w-5 h-5 text-white" />
+          </a>
+        )}
+        {socials.linkedin && (
+          <a 
+            href={socials.linkedin} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="transition-transform hover:scale-110"
+          >
+            <Linkedin className="w-5 h-5 text-white" />
+          </a>
+        )}
       </div>
     </div>
   </div>
@@ -46,27 +63,91 @@ const CrewCard = ({ image, name, role }) => (
 const CrewPage = () => {
   const members = [
     {
-      name: 'DHRUBOJYOTI CHAKRABORTY',
-      role: 'Tech Lead',
-      image: '/Dhrubojyoti1.png'
+      name: 'Ankush Paramanik',
+      role: 'Lead Volunteer',
+      image: '/ankush.png',
+      socials: {
+        instagram: 'https://instagram.com/ankush_paramanik',
+        github: 'https://github.com/ankushparamanik',
+        linkedin: 'https://linkedin.com/in/ankush-paramanik'
+      }
     },
     {
-      name: 'DEEP MOURI',
-      role: 'Tech Lead',
-      image: '/deep.png'
+      name: 'Sayan Das',
+      role: 'Lead Designer',
+      image: '/sayan.png',
+      socials: {
+        instagram: 'https://instagram.com/sayan_das',
+        github: 'https://github.com/sayandas',
+        linkedin: 'https://linkedin.com/in/sayan-das'
+      }
     },
     {
-      name: 'JIT SARKAR',
-      role: 'Tech Lead',
-      image: '/jit.png'
+      name: 'Surajit Guchhait',
+      role: 'Volunteer',
+      image: '/surjit.png',
+      socials: {
+        instagram: 'https://instagram.com/surajit_guchhait',
+        linkedin: 'https://linkedin.com/in/surajit-guchhait'
+      }
     },
     {
-      name: 'DHRUBA SINGHA ROY',
-      role: 'Tech Lead',
-      image: '/Dhruba.png'
+      name: 'Rick Koley',
+      role: 'Volunteer',
+      image: '/rick.png',
+      socials: {
+        instagram: 'https://instagram.com/rick_koley',
+        github: 'https://github.com/rickkoley',
+        linkedin: 'https://linkedin.com/in/rick-koley'
+      }
     },
-    
-    
+    {
+      name: 'Anik Bhattacharyya',
+      role: 'Volunteer',
+      image: '/anik.png',
+      socials: {
+        github: 'https://github.com/anikbhattacharyya',
+        linkedin: 'https://linkedin.com/in/anik-bhattacharyya'
+      }
+    },
+    {
+      name: 'Arpan Bhowmick',
+      role: 'Volunteer',
+      image: '/arpan.png',
+      socials: {
+        instagram: 'https://instagram.com/arpan_bhowmick',
+        linkedin: 'https://linkedin.com/in/arpan-bhowmick'
+      }
+    },
+    {
+      name: 'Tandra Mukherjee',
+      role: 'Volunteer',
+      image: '/tandra.png',
+      socials: {
+        instagram: 'https://instagram.com/tandra_mukherjee',
+        github: 'https://github.com/tandramukherjee',
+        linkedin: 'https://linkedin.com/in/tandra-mukherjee'
+      }
+    },
+    {
+      name: 'Sneha Hazra',
+      role: 'Volunteer',
+      image: '/sneha.png',
+      socials: {
+        instagram: 'https://instagram.com/sneha_hazra',
+        linkedin: 'https://linkedin.com/in/sneha-hazra'
+      }
+    },
+    {
+      name: 'Deepsikha Mukherjee',
+      role: 'Volunteer',
+      image: '/deepsikha.png',
+      socials: {
+        instagram: 'https://instagram.com/deepsikha_mukherjee',
+        github: 'https://github.com/deepsikhamukherjee',
+        linkedin: 'https://linkedin.com/in/deepsikha-mukherjee'
+      }
+    },
   ];
 
   return (
@@ -84,7 +165,7 @@ const CrewPage = () => {
         <div className="container mx-auto px-4 py-20">
           {/* Header section */}
           <div className="text-center mb-16">
-            <h1 className="text-6xl text-white mb-4 font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-500">
+            <h1 className="text-6xl text-white mt-14 mb-4 font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-500">
               Meet Our Crew
             </h1>
             <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-orange-500 mx-auto rounded-full mb-6"></div>
@@ -93,13 +174,13 @@ const CrewPage = () => {
             </p>
           </div>
 
-          {/* Cards grid */}
+          {/* Cards grid - Same layout as original crew page */}
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
               {members.map((member, index) => (
                 <div 
                   key={index} 
-                  className="animate-fadeIn"
+                  className="animate-fadeIn w-full max-w-xs"
                   style={{ 
                     animationDelay: `${index * 150}ms`,
                   }}
