@@ -83,7 +83,7 @@ const CrewPage = () => {
   const members = [
     {
       name: 'Ankush Paramanik',
-      role: 'Lead Volunteer',
+      role: 'Management Lead',
       image: '/ankush.png',
       socials: {
         instagram: 'https://www.instagram.com/paramanikankush/',
@@ -91,18 +91,8 @@ const CrewPage = () => {
       }
     },
     {
-      name: 'Sayan Das',
-      role: 'Lead Designer',
-      image: '/sayan.png',
-      socials: {
-        instagram: 'https://www.instagram.com/sayandas.neel?igsh=MWxudmxyeXpza2JjeQ==',
-        linkedin: 'https://www.linkedin.com/in/sayan-das-5937b3343/',
-        facebook: ''
-      }
-    },
-    {
       name: 'Adreeraj Das',
-      role: 'Volunteer',
+      role: 'Organizing Lead',
       image: '/adree.png',
       socials: {
         instagram: 'https://www.instagram.com/addreeraj',
@@ -111,11 +101,22 @@ const CrewPage = () => {
       }
     },
     {
+      name: 'Sayan Das',
+      role: 'Lead Designer',
+      image: '/sayan.png',
+      socials: {
+        instagram: 'https://www.instagram.com/sayandas.neel/',
+        linkedin: 'https://www.linkedin.com/in/sayan-das-5937b3343/',
+        facebook: ''
+      }
+    },
+    
+    {
       name: 'Surajit Guchhait',
       role: 'Volunteer',
       image: '/surjit.png',
       socials: {
-        instagram: 'https://www.instagram.com/surajit00018?igsh=azQwY3lzenRqdXNv',
+        instagram: 'https://www.instagram.com/surajit00018/',
         linkedin: 'https://www.linkedin.com/in/surajit-guchhait-734736371',
         facebook: ''
       }
@@ -125,17 +126,37 @@ const CrewPage = () => {
       role: 'Volunteer',
       image: '/rick.png',
       socials: {
-        instagram: 'https://www.instagram.com/rickkoley97?igsh=dGEwN2lzdDN1cmNl',
+        instagram: 'https://www.instagram.com/rickkoley97/',
         linkedin: 'https://www.linkedin.com/in/rick-koley-130876372',
         facebook: ''
       }
     },
+
+    {
+      name: 'Sarnick Sarkar',
+      role: 'Volunteer',
+      image: '/sarnik.png',
+      socials: {
+        instagram: 'https://www.instagram.com/iam_sarnick/',
+        facebook: 'https://www.facebook.com/sarnick.sarkar.2025/',
+      }
+    },
+    {
+      name: 'Soumya Chakraborty',
+      role: 'Volunteer',
+      image: '/soumya.png',
+      socials: {
+        instagram: 'https://www.instagram.com/soumyachakraborty2006/',
+        facebook: 'https://www.facebook.com/ramprasad.chakraborty.399/',
+      }
+    },
+    
     {
       name: 'Anik Bhattacharyya',
       role: 'Volunteer',
       image: '/anik.png',
       socials: {
-        instagram: 'https://www.instagram.com/anik_203?igsh=YmI3Z2lpN2x0YXFo',
+        instagram: 'https://www.instagram.com/anik_203/',
         facebook: 'https://www.facebook.com/anik.bhattacharyya.75' 
       }
     },
@@ -144,8 +165,25 @@ const CrewPage = () => {
       role: 'Volunteer',
       image: '/arpan.png',
       socials: {
-        instagram: 'https://www.instagram.com/whos__arpan__?igsh=cTdoMXNpNnFmc2Q4',
+        instagram: 'https://www.instagram.com/whos__arpan__/',
         facebook: 'https://www.facebook.com/arapn.bhowmick'
+      }
+    },
+    {
+      name: 'Surya Das',
+      role: 'Volunteer',
+      image: '/surya.png',
+      socials: {
+        instagram: 'https://www.instagram.com/its__surya__1',
+        facebook: 'https://www.facebook.com/profile.php?id=100081136884066',
+      }
+    },
+    {
+      name: 'Jeet bhowmick',
+      role: 'Volunteer',
+      image: '/jeet.png',
+      socials: {
+        instagram: 'https://www.instagram.com/jeet.bhowmick.2510',
       }
     },
     {
@@ -163,7 +201,7 @@ const CrewPage = () => {
       role: 'Volunteer',
       image: '/sneha.png',
       socials: {
-        instagram: 'https://www.instagram.com/__ocyeanic__02__?igsh=MWxwYmJxODZkdjFwdA==',
+        instagram: 'https://www.instagram.com/__ocyeanic__02__/',
         linkedin: 'https://www.linkedin.com/in/sneha-hazra-8a692b344/',
         facebook: ''
       }
@@ -173,7 +211,7 @@ const CrewPage = () => {
       role: 'Volunteer',
       image: '/deepsikha.png',
       socials: {
-        instagram: 'https://www.instagram.com/deepsikha5709?igsh=MWJ1b25xMTF0bDYwZA==',
+        instagram: 'https://www.instagram.com/deepsikha5709/',
         linkedin: 'https://www.linkedin.com/in/deepsikha-mukherjee-5b308b390/',
         facebook: ''
       }

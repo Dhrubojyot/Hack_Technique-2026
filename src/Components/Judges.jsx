@@ -1,37 +1,41 @@
 import React from 'react';
-import { Instagram, Github, Linkedin, Award } from 'lucide-react';
+import { Linkedin, Twitter } from 'lucide-react';
 
-const JudgeCard = ({ image, name, role, company }) => (
-  <div className="relative w-72 group">
-    <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-600 to-orange-300 shadow-lg transition-all duration-300 hover:shadow-2xl">
-      {/* Top section with name and role */}
-      <div className="p-4 pb-0"> {/* Reduced pb-2 to pb-0 */}
-        <h3 className="text-white text-2xl font-bold mb-2"> {/* Removed mb-1 */}
-          {name}
-        </h3>
-        <p className="text-white/90 text-sm font-medium">
-          {role}, {company}
-
-        </p>
-      </div>
-
-      {/* Image container */}
-      <div className="relative w-full aspect-[3/4] overflow-hidden">
+const JudgeCard = ({ image, linkedin, twitter }) => (
+  <div className="relative w-72">
+    {/* Main card container with orange border */}
+    <div className="relative overflow-hidden rounded-xl border-2 border-orange-500 bg-transparent">
+      {/* Image container - full card image with no top/bottom gap */}
+      <div className="relative w-full aspect-[3/4] overflow-hidden p-0">
         <img 
           src={image} 
-          alt={name} 
-          className="w-full h-full object-cover object-top"
+          alt="Judge" 
+          className="w-full h-full object-contain object-center scale-105"
         />
       </div>
 
-      {/* Bottom social icons bar */}
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-gray-800 to-gray-700 p-3 flex justify-center gap-6">
-        <a href="#" className="transition-transform hover:scale-110">
-          <Linkedin className="w-5 h-5 text-white" />
-        </a>
-        <a href="#" className="transition-transform hover:scale-110">
-          <Github className="w-5 h-5 text-white" />
-        </a>
+      {/* Social icons bar - thin solid color bar */}
+      <div className="bg-red-800 p-3 flex justify-center gap-6 rounded-b-lg">
+        {linkedin && (
+          <a 
+            href={linkedin} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="transition-all hover:scale-110 hover:text-orange-300 p-1"
+          >
+            <Linkedin className="w-5 h-5 text-white" />
+          </a>
+        )}
+        {twitter && (
+          <a 
+            href={twitter} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="transition-all hover:scale-110 hover:text-orange-300 p-1"
+          >
+            <Twitter className="w-5 h-5 text-white" />
+          </a>
+        )}
       </div>
     </div>
   </div>
@@ -40,30 +44,21 @@ const JudgeCard = ({ image, name, role, company }) => (
 const JudgesPage = () => {
   const judges = [
     {
-      name: 'Coming Soon',
-      role: '',
-      company: '',
-      image: '/judges.webp'
+      image: '/dhrubojyoti.png',
+      linkedin: 'https://www.linkedin.com/in/dhrubojyoti-chakraborty-567857257/',
     },
     {
-      name: 'Coming Soon',
-      role: '',
-      company: '',
-      image: '/judges.webp'
+      image: '/subham.png',
+      linkedin: 'https://www.linkedin.com/in/subham2409/',
     },
     {
-      name: 'Coming Soon',
-      role: '',
-      company: '',
-      image: '/judges.webp'
+      image: '/rumsha.png',
+      linkedin: 'https://www.linkedin.com/in/rumsha-waqia-wania-129718254/',
     },
     {
-      name: 'Coming Soon',
-      role: '',
-      company: '',
-      image: '/judges.webp'
+      image: '/saptak.jpeg',
+      linkedin: 'https://www.linkedin.com/in/saptak-biswas-50a834323/',
     },
-    
   ];
 
   return (

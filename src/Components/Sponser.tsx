@@ -72,14 +72,14 @@ const SponsorsPage = () => {
         alt: "AOT SC CSE LOGO"
       }
     ],
-    drink: [
-      {
-        name: "",
-        logo: "/red bull1.png",
-        url: "https://www.redbull.com/in-en",
-        alt: "Drink Partner LOGO"
-      }
-    ],
+    // drink: [
+    //   {
+    //     name: "",
+    //     logo: "/red bull1.png",
+    //     url: "https://www.redbull.com/in-en",
+    //     alt: "Drink Partner LOGO"
+    //   }
+    // ],
     domain: [
       {
         name: "XYZ Domain",
